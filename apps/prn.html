@@ -191,6 +191,22 @@ function fetchAPI(){
         document.getElementById('result').textContent = 'Error:\n'+err;
     });
 }
+<h2>Video Player:</h2>
+<label>Video Page URL</label>
+<input type="text" id="videoUrl" placeholder="Enter video page URL here">
+<button onclick="loadVideo()">Load Video</button>
+
+<iframe id="videoPlayer" src="" style="width:90%; height:400px; border:none; margin-top:10px;"></iframe>
+
+<script>
+function loadVideo() {
+    const url = document.getElementById('videoUrl').value.trim();
+    if(!url) {
+        alert('Please enter a URL!');
+        return;
+    }
+    document.getElementById('videoPlayer').src = url;
+}
 </script>
 
 </body>
